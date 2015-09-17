@@ -4,16 +4,18 @@ description: A web app built using polymer.dart.
 #author: Your Name <email@example.com>
 #homepage: https://www.example.com
 dependencies:
-  polymer: ^0.17.0
+  polymer: ^1.0.0
   web_components: ^0.12.0
-  browser: any
-  polymer_elements:
-    git:
-      url: https://github.com/dart-lang/polymer_elements.git
+  reflectable: ^0.1.0
+  browser: ^0.10.0
+  polymer_elements: ^0.1.0
 transformers:
 - web_components:
     entry_points:
-    - web/index.html
+      - web/index.html
+- reflectable:
+    entry_points:
+      - web/index.dart
 - $dart2js:
     minify: true
 dev_dependencies:
@@ -24,9 +26,13 @@ environment:
 dependency_overrides:
   polymer:
     git:
-      ref: 0.17-0-dev-interop-reverse
+      ref: behaviors
       url: https://github.com/dart-lang/polymer-dart.git
   polymer_interop:
     git:
       ref: 0.2.0-dev
       url: https://github.com/dart-lang/polymer_interop.git
+  polymer_elements:
+      git:
+        ref: behaviors
+        url: https://github.com/dart-lang/polymer_elements.git

@@ -11,14 +11,15 @@ import 'package:polymer_elements/paper_input.dart';
 class MainApp extends PolymerElement {
 
   @property String reversed = 'hello';
+  @property bool myBool = false;
 
   factory MainApp() => new Element.tag('main-app');
   MainApp.created() : super.created();
 
   @eventHandler
-  void reverseText(Event event, Object object, PaperInput target) {
+  void reverseText(Event event,o) {
     set('reversed',event.currentTarget.value.split('').reversed.join(''));
-    print('object= ${object}, target=${target}');
+   // print('object= ${object}, target=${target}');
   }
 
 }
